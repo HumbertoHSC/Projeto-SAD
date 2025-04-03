@@ -14,5 +14,8 @@ Este projeto é **open-source** e tem como objetivo fornecer uma ferramenta intu
 ## Status do Projeto
 Atualmente, este projeto se concentra apenas no **desenvolvimento da interface gráfica (front-end)**. A implementação do método WFRIM e suas funcionalidades analíticas ainda não foram incorporadas. No momento, o objetivo é fornecer uma plataforma visual funcional que possa ser integrada a um backend no futuro.
 
+## Link para Demonstração:
+- [Acesse aqui](https://playcode.io/2316022)
+  
 ## Licença
 Este projeto é distribuído sob a licença MIT, permitindo seu uso e modificação livremente.
