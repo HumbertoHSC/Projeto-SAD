@@ -25,7 +25,58 @@ export default function App() {
     }, {})
   );
   
-  // Estado para armazenar se cada critério deve ser maximizado ou minimizado
+  
+  // Função para montar o JSON no formato W-FRIM
+  const gerarJsonWFRIM = () => {
+    const criteriosKeys = criterios.map((crit, idx) => "C" + (idx + 1));
+    const alternativasKeys = alternativas.map((alt, idx) => "A" + (idx + 1));
+
+    const performance_matrix = alternativasKeys.map((altKey, altIdx) => {
+      const values = {};
+      criteriosKeys.forEach((critKey, critIdx) => {
+        values[critKey] = [
+          parseFloat(matrizPerformance[alternativas[altIdx]][critIdx]) || 0,
+          parseFloat(matrizPerformance[alternativas[altIdx]][critIdx]) || 0,
+          parseFloat(matrizPerformance[alternativas[altIdx]][critIdx]) || 0
+        ];
+      });
+      return {
+        name: altKey,
+        values: values
+      };
+    });
+
+    const weights = {};
+    criteriosKeys.forEach((critKey, idx) => {
+      weights[critKey] = [
+        parseFloat(pesos[criterios[idx]]) || 0,
+        parseFloat(pesos[criterios[idx]]) || 0,
+        parseFloat(pesos[criterios[idx]]) || 0
+      ];
+    });
+
+    const preferences = {};
+    criteriosKeys.forEach((critKey, idx) => {
+      preferences[critKey] = otimizacao[criterios[idx]] === "Maximizar" ? 1 : -1;
+    });
+
+    const jsonFinal = {
+      method: "W-FRIM",
+      parameters: {
+        criteria: criteriosKeys,
+        performance_matrix: performance_matrix,
+        range: {}, // Pode ser preenchido se necessário
+        reference_ideal: {}, // Pode ser preenchido se necessário
+        preferences: preferences,
+        weights: weights
+      }
+    };
+
+    console.log("JSON W-FRIM gerado:", JSON.stringify(jsonFinal, null, 2));
+    return jsonFinal;
+  };
+
+// Estado para armazenar se cada critério deve ser maximizado ou minimizado
   const [otimizacao, setOtimizacao] = useState(
     criterios.reduce((acc, crit) => {
       acc[crit] = "Maximizar"; // Padrão é maximizar
