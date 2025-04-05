@@ -32,5 +32,5 @@ Atualmente, este projeto se concentra apenas no **desenvolvimento da interface g
 ## Link para Demonstração:
 - [Acesse aqui](https://preview-2316022.playcode.io/)
   
-## Licença
-Este projeto é distribuído sob a licença MIT, permitindo seu uso e modificação livremente.
+## Autores
+Humberto Campos - hhsc@cin.ufpe.br
