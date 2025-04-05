@@ -1,10 +1,25 @@
 # WFRIM - Sistema de Apoio à Decisão Multicritério
 
-## Sobre o Projeto
-O **WFRIM** (Weighted Fuzzy Risk Index Method) é um sistema baseado em um método multicritério que auxilia na tomada de decisão em cenários complexos. Ele utiliza conceitos de lógica fuzzy e índices ponderados para avaliar diferentes alternativas de forma estruturada e eficiente.
+Este projeto implementa o **Weighted Fuzzy Reference Ideal Method (W-FRIM)**, uma abordagem multicritério baseada em lógica fuzzy para auxiliar na **avaliação e ranqueamento de alternativas** considerando pesos de critérios, referências ideais e estruturas de preferência.
 
-Este projeto é **open-source** e tem como objetivo fornecer uma ferramenta intuitiva e flexível para pesquisadores, analistas e tomadores de decisão que precisam lidar com múltiplos critérios e incertezas em suas análises.
+## Como Funciona
 
+Envia um único arquivo JSON contendo:
+
+- **Critérios**
+- **Alternativas** com valores fuzzy por critério
+- **Faixas de valores esperados** por critério
+- **Referências ideais fuzzy**
+- **Estrutura de preferência (λ)** por critério
+- **Pesos fuzzy** por critério
+
+Recebe um único arquivo JSON do BackEnd contendo:
+
+- Dados Normalizados dos valores fuzzy com base nas referências ideais;
+- Valores normalizados usando os pesos dos critérios;
+- Resultados dos índices relativos de cada alternativa;
+- Ranqueamento das alternativas.
+  
 ## Recursos Principais
 - Interface visual para apresentação do método WFRIM
 - Interface web interativa para facilitar o uso
