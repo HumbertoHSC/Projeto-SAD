@@ -33,5 +33,5 @@ Atualmente, este projeto se concentra apenas no **desenvolvimento da interface g
 - [Acesse aqui](https://codesandbox.io/p/sandbox/kg723m)
   
 ## Autores
-Humberto Campos - hhsc@cin.ufpe.br
-Izack Angelo - ias5@cin.ufpe.br
+- Humberto Campos - hhsc@cin.ufpe.br
+- Izack Angelo - ias5@cin.ufpe.br
