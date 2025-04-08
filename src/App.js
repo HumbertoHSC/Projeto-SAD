@@ -7,7 +7,7 @@ import {
   MdOutlineDataThresholding,
 } from "react-icons/md"; // Ícones da Material Design
 import "./styles.css"; // Estilos CSS
-import dadosJson from "./resultados.json"; // Dados mockados
+import dadosJson from "./resultados.json"; // Importando o arquivo JSON
 
 // Componente principal da aplicação
 export default function App() {
